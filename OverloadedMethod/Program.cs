@@ -11,8 +11,9 @@ namespace OverloadedMethod
 
             foreach (var shape in shapes)
             {
-                // option 4:  so what about this....?  no dice!      
-                (shape as dynamic).Execute(); 
+                // option 4:  so what about this....? 
+                // (shape as dynamic).Execute();            // doesn't work
+                ExtensionMethods.Execute(shape as dynamic); // this works!
             }
         }
     }
